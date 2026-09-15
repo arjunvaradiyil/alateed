@@ -1,4 +1,5 @@
 import { AboutPreview } from '@/components/home/AboutPreview'
+import { ContactSection } from '@/components/home/ContactSection'
 import { HomeHero } from '@/components/home/HomeHero'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 
@@ -8,6 +9,7 @@ export default function HomePage() {
       <HomeHero />
       <AboutPreview />
       <ServicesPreview />
+      <ContactSection />
     </div>
   )
 }

@@ -23,10 +23,10 @@ export const company = {
 }
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Contact', href: '#contact' },
 ] as const
 
 export const services = [

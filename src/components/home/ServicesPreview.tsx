@@ -1,14 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { Container, SectionHeading } from '@/components/layout/Container'
-import { Button } from '@/components/ui/Button'
 import { SectionPreHeader } from '@/components/ui/SectionPreHeader'
 import { services } from '@/data/site'
 
 export function ServicesPreview() {
   return (
-    <section className="bg-neutral-50 py-16 sm:py-20 lg:py-28">
+    <section id="services" className="scroll-mt-[var(--header-h)] bg-neutral-50 py-16 sm:py-20 lg:py-28">
       <Container>
         <SectionHeading
           eyebrow={<SectionPreHeader>Our Services</SectionPreHeader>}
@@ -17,21 +15,19 @@ export function ServicesPreview() {
               Eleven technical services for Dubai sites
             </h2>
           }
-          action={<Button href="/services">All Services</Button>}
         />
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Link
+            <article
               key={service.slug}
-              href={`/services#${service.slug}`}
-              className="service-card group relative block min-h-[240px] overflow-hidden bg-brand-black sm:min-h-[300px] lg:min-h-[320px]"
+              className="service-card relative min-h-[240px] overflow-hidden bg-brand-black sm:min-h-[300px] lg:min-h-[320px]"
             >
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
@@ -44,7 +40,7 @@ export function ServicesPreview() {
                 </h3>
                 <p className="font-poppins mt-1 text-sm text-white/80">{service.subtitle}</p>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </Container>

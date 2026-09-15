@@ -45,6 +45,8 @@
   html {
     overflow-x: clip;
     background: var(--brand-white);
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
   }
 
   html,
@@ -132,25 +134,20 @@
 }
 
 .site-header {
-  position: relative;
-  width: 100%;
-  background: #010101;
-}
-
-.site-header--home {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  width: 100%;
   background: transparent;
 }
 
-.site-header--page {
+.site-header--solid {
   background: var(--brand-navy);
 }
 
-.site-header--page .site-header__bar {
+.site-header--solid .site-header__bar {
   background: var(--brand-navy);
   border-bottom-color: rgba(201, 162, 74, 0.4);
 }

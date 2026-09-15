@@ -13,7 +13,7 @@ const HIGHLIGHTS = [
 
 export function AboutPreview() {
   return (
-    <section className="bg-[#f7f4ec] py-16 sm:py-20 lg:py-28">
+    <section id="about" className="scroll-mt-[var(--header-h)] bg-[#f7f4ec] py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="grid h-full grid-cols-12 gap-3 sm:gap-4 lg:col-span-6">
@@ -74,7 +74,7 @@ export function AboutPreview() {
               ))}
             </ul>
 
-            <Button href="/about">About Us</Button>
+            <Button href="#contact">Contact Us</Button>
           </div>
         </div>
       </Container>

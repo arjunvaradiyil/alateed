@@ -9,10 +9,10 @@ import { navLinks } from '@/data/site'
 type MobileMenuProps = {
   open: boolean
   onClose: () => void
-  pathname?: string
+  active?: string
 }
 
-export function MobileMenu({ open, onClose, pathname = '/' }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, active = 'home' }: MobileMenuProps) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
@@ -50,7 +50,7 @@ export function MobileMenu({ open, onClose, pathname = '/' }: MobileMenuProps) {
         </div>
         <ul className="flex flex-col">
           {navLinks.map((link) => {
-            const current = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+            const current = active === link.href.slice(1)
             return (
               <li key={link.href}>
                 <Link

@@ -1,11 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 69.632" fill="none">
   <defs>
-    <linearGradient id="g" x1="2" y1="30" x2="30" y2="2" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0c2d5c"/>
-      <stop offset="0.5" stop-color="#1a4a86"/>
-      <stop offset="1" stop-color="#c9a24a"/>
+    <linearGradient id="g" x1="6" y1="64" x2="94" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#303085"/>
+      <stop offset="0.45" stop-color="#4a9ad9"/>
+      <stop offset="1" stop-color="#26479c"/>
     </linearGradient>
+    <clipPath id="o">
+      <path d="M18.792.216C8.175 1.692 0 10.801 0 21.824V69.632H81.211C91.825 67.94 100 58.831 100 47.808V0H18.792Z"/>
+    </clipPath>
   </defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <path d="M8.5 24V8h4.8l5.1 9.8V8H23.5v16h-4.8l-5.1-9.8V24H8.5Z" fill="white"/>
+  <g clip-path="url(#o)">
+    <rect width="100" height="69.632" fill="white"/>
+    <path fill="url(#g)" d="M35.349 0L36.28.928L40.397 5.033L51.143 15.748L56.231 20.821L63.457 28.027L63.457 42.403L51.734 30.711L36.727 15.748L36.28 15.304L29.175 8.218L29.175 53.884L41.201 53.884L36.326 64.602L18.792 64.602L18.792.216C8.175 1.692 0 10.801 0 21.824L0 69.632L64.172 69.632L63.457 68.92L59.128 64.602L48.379 53.884L43.438 48.958L36.28 41.821L36.28 27.442L47.938 39.065L62.797 53.884L63.457 54.544L70.828 61.892L70.828 15.748L58.537 15.748L63.411 5.033L81.211 5.033L81.211 69.416C91.825 67.94 100 58.831 100 47.808L100 0Z"/>
+  </g>
 </svg>
