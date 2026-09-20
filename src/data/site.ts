@@ -23,10 +23,10 @@ export const company = {
 }
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
 ] as const
 
 export const services = [
@@ -67,8 +67,7 @@ export const services = [
     subtitle: 'Surveillance Coverage',
     description:
       'CCTV camera installation, cabling, and commissioning for practical, maintainable surveillance coverage.',
-    image:
-      'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1400&q=80',
+    image: '/services/cctv.jpg',
   },
   {
     number: '05',
@@ -77,8 +76,7 @@ export const services = [
     subtitle: 'Secure Entry',
     description:
       'Access control installation for doors and controlled areas, from readers and locks through to testing and handover.',
-    image:
-      'https://images.unsplash.com/photo-1558002038-779718d23dc6?auto=format&fit=crop&w=1400&q=80',
+    image: '/services/access.jpg',
   },
   {
     number: '06',
@@ -87,8 +85,7 @@ export const services = [
     subtitle: 'Uninterruptible Power',
     description:
       'UPS system supply, installation, and testing to keep critical loads running during mains interruption.',
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80',
+    image: '/services/ups.jpg',
   },
   {
     number: '07',

@@ -143,10 +143,12 @@
   background: transparent;
 }
 
+.site-header--page,
 .site-header--solid {
   background: var(--brand-navy);
 }
 
+.site-header--page .site-header__bar,
 .site-header--solid .site-header__bar {
   background: var(--brand-navy);
   border-bottom-color: rgba(201, 162, 74, 0.4);

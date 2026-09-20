@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { LuArrowUpRight } from 'react-icons/lu'
@@ -10,9 +11,10 @@ import { MobileMenu } from '@/components/layout/MobileMenu'
 import { navLinks } from '@/data/site'
 
 export function Header() {
+  const pathname = usePathname() ?? '/'
+  const isHome = pathname === '/'
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [active, setActive] = useState('home')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48)
@@ -21,28 +23,12 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    const ids = navLinks.map((link) => link.href.slice(1))
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-        if (visible[0]?.target.id) setActive(visible[0].target.id)
-      },
-      { rootMargin: '-25% 0px -55% 0px', threshold: [0.1, 0.25, 0.5] },
-    )
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <header className={`site-header ${scrolled ? 'site-header--solid' : ''}`}>
+    <header
+      className={`site-header ${isHome ? 'site-header--home' : 'site-header--page'} ${
+        scrolled ? 'site-header--solid' : ''
+      }`}
+    >
       <div className="site-header__bar">
         <div className="site-header__row">
           <Logo gradientId="ateed-n-header" className="justify-self-start" />
@@ -50,7 +36,8 @@ export function Header() {
           <nav className="hidden justify-center lg:flex" aria-label="Main">
             <ul className="site-header__nav flex items-center gap-6 xl:gap-9">
               {navLinks.map((link) => {
-                const current = active === link.href.slice(1)
+                const current =
+                  link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
                 return (
                   <li key={link.href}>
                     <Link href={link.href} aria-current={current ? 'page' : undefined}>
@@ -74,7 +61,7 @@ export function Header() {
                 <path d="M0 1h22v2H0V1Zm0 6h22v2H0V7Zm0 6h22v2H0v-2Z" fill="currentColor" />
               </svg>
             </button>
-            <Link href="#contact" className="header-cta">
+            <Link href="/contact" className="header-cta">
               Contact
               <span className="header-cta__arrow" aria-hidden>
                 <LuArrowUpRight size={16} />
@@ -84,7 +71,7 @@ export function Header() {
         </div>
       </div>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} active={active} />
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} pathname={pathname} />
     </header>
   )
 }

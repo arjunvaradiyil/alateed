@@ -23,7 +23,7 @@ export function Footer() {
                 safety, and reliability.
               </p>
                 <Link
-                href="#contact"
+                href="/contact"
                 className="hero-cta inline-flex h-12 w-full max-w-[220px] px-6 sm:w-auto"
               >
                 Contact Us

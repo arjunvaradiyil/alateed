@@ -1,24 +1,38 @@
 import Image from 'next/image'
 
 import { Container, SectionHeading } from '@/components/layout/Container'
+import { Button } from '@/components/ui/Button'
 import { SectionPreHeader } from '@/components/ui/SectionPreHeader'
 import { services } from '@/data/site'
 
-export function ServicesPreview() {
+type ServicesPreviewProps = {
+  headingLevel?: 'h1' | 'h2'
+  limit?: number
+  showAllLink?: boolean
+}
+
+export function ServicesPreview({
+  headingLevel = 'h2',
+  limit,
+  showAllLink = false,
+}: ServicesPreviewProps) {
+  const Heading = headingLevel
+  const items = limit ? services.slice(0, limit) : services
+
   return (
-    <section id="services" className="scroll-mt-[var(--header-h)] bg-neutral-50 py-16 sm:py-20 lg:py-28">
+    <section className="bg-neutral-50 py-16 sm:py-20 lg:py-28">
       <Container>
         <SectionHeading
           eyebrow={<SectionPreHeader>Our Services</SectionPreHeader>}
           title={
-            <h2 className="font-bebas-neue text-[32px] uppercase leading-tight text-brand-dark sm:text-4xl lg:text-[52px] lg:leading-[56px]">
+            <Heading className="font-bebas-neue text-[32px] uppercase leading-tight text-brand-dark sm:text-4xl lg:text-[52px] lg:leading-[56px]">
               Eleven technical services for Dubai sites
-            </h2>
+            </Heading>
           }
         />
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {items.map((service) => (
             <article
               key={service.slug}
               className="service-card relative min-h-[240px] overflow-hidden bg-brand-black sm:min-h-[300px] lg:min-h-[320px]"
@@ -43,6 +57,12 @@ export function ServicesPreview() {
             </article>
           ))}
         </div>
+
+        {showAllLink ? (
+          <div className="mt-10 flex justify-center sm:mt-12">
+            <Button href="/services">All Services</Button>
+          </div>
+        ) : null}
       </Container>
     </section>
   )

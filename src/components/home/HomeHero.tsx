@@ -6,7 +6,7 @@ import { heroImage } from '@/data/site'
 
 export function HomeHero() {
   return (
-    <section id="home" className="home-hero" aria-labelledby="hero-title">
+    <section className="home-hero" aria-labelledby="hero-title">
       <Image
         src={heroImage}
         alt=""
@@ -29,10 +29,10 @@ export function HomeHero() {
             services for sites across Dubai.
           </p>
           <div className="flex w-full max-w-md flex-col items-center justify-center gap-3 sm:max-w-none sm:flex-row sm:gap-4">
-            <Button href="#services" variant="hero">
+            <Button href="/services" variant="hero">
               Our Services
             </Button>
-            <Button href="#contact" variant="hero">
+            <Button href="/contact" variant="hero">
               Contact Us
             </Button>
           </div>

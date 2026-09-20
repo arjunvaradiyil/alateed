@@ -61,7 +61,7 @@ export function Logo({
 }) {
   return (
     <Link
-      href="/#home"
+      href="/"
       className={`flex min-w-0 max-w-full items-center gap-2.5 sm:gap-3 ${className}`}
       aria-label={`${company.shortName} home`}
     >

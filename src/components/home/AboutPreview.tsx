@@ -11,9 +11,21 @@ const HIGHLIGHTS = [
   { num: '03', label: 'ELV & security' },
 ] as const
 
-export function AboutPreview() {
+type AboutPreviewProps = {
+  headingLevel?: 'h1' | 'h2'
+  ctaHref?: string
+  ctaLabel?: string
+}
+
+export function AboutPreview({
+  headingLevel = 'h2',
+  ctaHref = '/about',
+  ctaLabel = 'About Us',
+}: AboutPreviewProps) {
+  const Heading = headingLevel
+
   return (
-    <section id="about" className="scroll-mt-[var(--header-h)] bg-[#f7f4ec] py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#f7f4ec] py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="grid h-full grid-cols-12 gap-3 sm:gap-4 lg:col-span-6">
@@ -51,9 +63,9 @@ export function AboutPreview() {
 
           <div className="flex min-w-0 flex-col lg:col-span-6">
             <SectionPreHeader>About Us</SectionPreHeader>
-            <h2 className="font-bebas-neue mb-5 text-[32px] font-normal uppercase leading-[1.1] tracking-tight text-brand-dark sm:mb-6 sm:text-4xl lg:text-[52px] lg:leading-[56px]">
+            <Heading className="font-bebas-neue mb-5 text-[32px] font-normal uppercase leading-[1.1] tracking-tight text-brand-dark sm:mb-6 sm:text-4xl lg:text-[52px] lg:leading-[56px]">
               Quality, safety and reliability on every site
-            </h2>
+            </Heading>
             <p className="font-helvetica-neue mb-8 text-[15px] font-light leading-[1.7] text-neutral-700 sm:text-[17px]">
               {company.about}
             </p>
@@ -74,7 +86,7 @@ export function AboutPreview() {
               ))}
             </ul>
 
-            <Button href="#contact">Contact Us</Button>
+            <Button href={ctaHref}>{ctaLabel}</Button>
           </div>
         </div>
       </Container>

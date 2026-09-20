@@ -1,5 +1,4 @@
 import { AboutPreview } from '@/components/home/AboutPreview'
-import { ContactSection } from '@/components/home/ContactSection'
 import { HomeHero } from '@/components/home/HomeHero'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 
@@ -8,8 +7,7 @@ export default function HomePage() {
     <div className="min-w-0 overflow-x-hidden">
       <HomeHero />
       <AboutPreview />
-      <ServicesPreview />
-      <ContactSection />
+      <ServicesPreview limit={6} showAllLink />
     </div>
   )
 }
