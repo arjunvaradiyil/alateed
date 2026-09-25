@@ -47,8 +47,7 @@ export const services = [
     subtitle: 'Detection & Notification',
     description:
       'Fire alarm system installation, device placement, and testing so buildings are ready to detect and alert when it matters.',
-    image:
-      'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1400&q=80',
+    image: '/services/fire-jsb.jpg',
   },
   {
     number: '03',
@@ -94,8 +93,7 @@ export const services = [
     subtitle: 'Emergency Power Continuity',
     description:
       'Central battery systems for emergency lighting and essential circuits, installed and verified for reliable backup.',
-    image:
-      'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=80',
+    image: '/services/central-battery.jpg',
   },
   {
     number: '08',

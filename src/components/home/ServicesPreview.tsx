@@ -41,7 +41,11 @@ export function ServicesPreview({
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover"
+                className={`object-cover ${
+                  service.slug === 'ups-systems' || service.slug === 'central-battery'
+                    ? 'object-top'
+                    : 'object-center'
+                }`}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
