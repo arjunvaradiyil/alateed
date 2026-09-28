@@ -49,7 +49,13 @@ export const metadata: Metadata = {
   description:
     'Noor Al Ateed Technical Services — electrical works, fire alarm, ELV, CCTV, access control, UPS, central battery, testing, cable pulling, and maintenance in Dubai, UAE.',
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
 }
 
