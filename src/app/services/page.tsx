@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: 'Services',
   description:
     'Electrical works, fire alarm, ELV, CCTV, access control, UPS, and maintenance from Noor Al Ateed Technical Services in Dubai.',
+  alternates: { canonical: '/services' },
+  robots: { index: true, follow: true },
 }
 
 export default function ServicesPage() {

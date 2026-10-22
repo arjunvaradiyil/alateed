@@ -15,17 +15,32 @@ export function ContactSection() {
                 Tell us about your site
               </h1>
               <p className="font-poppins max-w-lg text-sm leading-relaxed text-neutral-600 sm:text-base">
-                Speak with our technical engineer about electrical, fire, ELV, or maintenance works
-                in Dubai.
+                Speak with our team about electrical, fire, ELV, or maintenance works in Dubai.
+                Call, email, or send a message and we will get back to you.
               </p>
-              <div className="mt-8 border-t border-brand-gold/30 pt-6">
-                <p className="font-bebas-neue text-2xl text-brand-navy">{company.contactName}</p>
-                <p className="font-poppins text-sm uppercase tracking-wider text-brand-gold">
-                  {company.contactTitle}
-                </p>
-                <p dir="rtl" className="font-arabic mt-3 text-base text-brand-navy">
+              <div className="mt-8 space-y-5 border-t border-brand-gold/30 pt-6">
+                {company.contacts.map((person) => (
+                  <div key={person.name}>
+                    <h2 className="font-bebas-neue text-2xl text-brand-navy">{person.name}</h2>
+                    <p className="font-poppins text-sm uppercase tracking-wider text-brand-gold">
+                      {person.title}
+                    </p>
+                    <a
+                      href={`tel:${person.phone.replace(/\s/g, '')}`}
+                      className="font-poppins mt-1 inline-block text-sm font-semibold text-brand-navy"
+                      dir="ltr"
+                    >
+                      {person.phone}
+                    </a>
+                  </div>
+                ))}
+                <p dir="rtl" className="font-arabic text-base text-brand-navy">
                   {company.arabicName}
                 </p>
+                <p className="font-poppins text-sm leading-relaxed text-neutral-600">
+                  {company.address}
+                </p>
+                <p className="font-poppins text-sm text-neutral-600">{company.email}</p>
               </div>
             </div>
             <div className="min-w-0">

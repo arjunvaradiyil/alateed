@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'About Noor Al Ateed Technical Services — electrical, fire, ELV, and security works in Muhaisanah, Dubai.',
+  alternates: { canonical: '/about' },
+  robots: { index: true, follow: true },
 }
 
 export default function AboutPage() {

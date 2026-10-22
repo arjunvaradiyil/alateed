@@ -1,12 +1,41 @@
+export const siteUrl = 'https://www.nooralateed.ae'
+
+export const seoKeywords = [
+  'Noor Al Ateed',
+  'technical services Dubai',
+  'electrical works Dubai',
+  'fire alarm installation',
+  'ELV systems',
+  'CCTV installation Dubai',
+  'access control',
+  'UPS systems',
+  'central battery',
+  'Muhaisanah',
+]
+
 export const company = {
   name: 'Noor Al Ateed Technical Services',
   shortName: 'Noor Al Ateed',
   arabicName: 'نور العتيد للخدمات الفنية',
   tagline: 'Technical Services',
+  url: siteUrl,
   email: 'ateedtech@gmail.com',
+  website: 'www.nooralateed.ae',
+  contacts: [
+    {
+      name: 'Shibu Varghese',
+      title: 'Managing Director',
+      phone: '+971 55 659 0904',
+    },
+    {
+      name: 'Binu K Jose',
+      title: 'Operations Manager',
+      phone: '+971 56 722 1135',
+    },
+  ],
   phones: [
-    { label: 'Mobile', value: '+971 55 659 0904' },
-    { label: 'Mobile', value: '+971 50 893 0663' },
+    { label: 'Managing Director', value: '+971 55 659 0904' },
+    { label: 'Operations Manager', value: '+971 56 722 1135' },
   ],
   address: 'Muhaisanah Fourth, Madina Mall, Dubai, U.A.E.',
   mapsQuery: 'Madina Mall, Muhaisanah 4, Dubai, United Arab Emirates',
@@ -14,8 +43,8 @@ export const company = {
     'https://www.google.com/maps?q=Madina+Mall,+Muhaisanah+4,+Dubai,+United+Arab+Emirates',
   mapsEmbed:
     'https://www.google.com/maps?q=Madina+Mall,+Muhaisanah+4,+Dubai,+United+Arab+Emirates&output=embed',
-  contactName: 'Binu K. Jose',
-  contactTitle: 'Technical Engineer',
+  contactName: 'Shibu Varghese',
+  contactTitle: 'Managing Director',
   workingDays: 'Sunday to Thursday — 08:00am to 06:00pm',
   weekend: 'Friday to Saturday — Closed',
   about:

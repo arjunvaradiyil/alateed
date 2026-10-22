@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
+
 import { AboutPreview } from '@/components/home/AboutPreview'
 import { HomeHero } from '@/components/home/HomeHero'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+}
 
 export default function HomePage() {
   return (

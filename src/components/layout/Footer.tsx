@@ -6,8 +6,6 @@ import { Logo } from '@/components/layout/Logo'
 import { company, navLinks } from '@/data/site'
 
 export function Footer() {
-  const office = company.phones[0]
-  const mobile = company.phones[1]
   const mapsUrl = company.mapsUrl
   const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(company.email)}`
 
@@ -55,18 +53,23 @@ export function Footer() {
               <h3 className="font-poppins mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-gold">
                 Contact
               </h3>
-              <a
-                href={`tel:${office.value.replace(/\s/g, '')}`}
-                className="block w-fit border-b-2 border-brand-gold pb-0.5 font-helvetica-neue text-xl font-bold leading-7 text-brand-light transition-colors hover:border-white hover:text-white sm:text-[22px]"
-              >
-                {office.value}
-              </a>
-              <a
-                href={`tel:${mobile.value.replace(/\s/g, '')}`}
-                className="block w-fit border-b-2 border-transparent pb-0.5 font-helvetica-neue text-base font-bold text-white/90 transition-colors hover:border-brand-gold hover:text-brand-gold sm:text-lg"
-              >
-                {mobile.value}
-              </a>
+              {company.contacts.map((person, index) => (
+                <div key={person.phone}>
+                  <p className="font-poppins mb-1 text-[11px] uppercase tracking-wider text-white/55">
+                    {person.name} · {person.title}
+                  </p>
+                  <a
+                    href={`tel:${person.phone.replace(/\s/g, '')}`}
+                    className={`block w-fit border-b-2 pb-0.5 font-helvetica-neue font-bold transition-colors ${
+                      index === 0
+                        ? 'border-brand-gold text-xl leading-7 text-brand-light hover:border-white hover:text-white sm:text-[22px]'
+                        : 'border-transparent text-base text-white/90 hover:border-brand-gold hover:text-brand-gold sm:text-lg'
+                    }`}
+                  >
+                    {person.phone}
+                  </a>
+                </div>
+              ))}
               <a
                 href={`mailto:${company.email}`}
                 className="block break-all font-poppins text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:text-brand-gold md:hidden"
